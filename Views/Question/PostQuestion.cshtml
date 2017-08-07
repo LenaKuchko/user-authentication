@@ -1,0 +1,16 @@
+﻿@model StackOverFlow.Models.Question
+
+@{
+    ViewData["Title"] = @Html.DisplayFor(model => model.Title);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Ask a Question</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+    <input type="submit" value="Ask"/>
+}
+<p>@Html.ActionLink("back to homepage", "Index", "Account")</p>
